@@ -10,19 +10,20 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-    { name: "About us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#work" },
-    { name: "Team", href: "#team" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Awards", href: "#awards" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About us", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Team", href: "/#team" },
+    { name: "Testimonials", href: "/#testimonials" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Contact", href: "/contact" },
 ]
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false)
     const [scrolled, setScrolled] = React.useState(false)
-    const [activeTab, setActiveTab] = React.useState("About us")
+    const [activeTab, setActiveTab] = React.useState("Home")
     const [mounted, setMounted] = React.useState(false)
     const { theme, setTheme } = useTheme()
 
@@ -48,13 +49,13 @@ export function Navbar() {
             <nav className="max-w-7xl mx-auto flex items-center justify-between">
 
                 {/* Logo */}
-                <Link href="/" className="flex items-center -ml-20">
+                <Link href="/" className="flex items-center xl:-ml-20">
                     <Image
                         src="/zybrotech-logo.webp"
                         alt="Zybrotech Logo"
                         width={160}
                         height={44}
-                        className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
+                        className="h-8 sm:h-10 w-auto object-contain dark:brightness-0 dark:invert"
                         priority
                     />
                 </Link>
@@ -86,18 +87,7 @@ export function Navbar() {
                 </div>
 
                 {/* Right side Actions */}
-                <div className="flex items-center gap-2 -mr-20">
-                    <div className="hidden sm:flex items-center gap-2">
-                        <Button
-                            variant="outline"
-                            className="px-5 rounded-full border-zinc-300 dark:border-zinc-600 text-black dark:text-white bg-transparent"
-                        >
-                            Sign In
-                        </Button>
-                        <Button className="px-5 rounded-full bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
-                            Sign Up
-                        </Button>
-                    </div>
+                <div className="flex items-center gap-2 xl:-mr-20">
 
                     {/* Theme Toggle */}
                     {mounted && (
@@ -178,10 +168,6 @@ export function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
-                            <div className="border-t border-zinc-100 dark:border-zinc-800 mt-3 pt-4 flex flex-col gap-3">
-                                <Button variant="outline" className="w-full h-12 text-base">Sign In</Button>
-                                <Button className="w-full h-12 text-base">Sign Up</Button>
-                            </div>
                         </div>
                     </motion.div>
                 )}

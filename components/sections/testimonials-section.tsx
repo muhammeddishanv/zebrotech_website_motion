@@ -1,0 +1,122 @@
+"use client"
+
+import * as React from "react"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
+
+export function TestimonialsSection() {
+    return (
+        <section id="testimonials" className="relative py-24 bg-transparent overflow-hidden">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-20">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        className="text-4xl md:text-5xl lg:text-5xl font-medium tracking-tight text-zinc-900 dark:text-white"
+                    >
+                        What our satisfied customers
+                        <br />
+                        are saying <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">about us</span>
+                    </motion.h2>
+                </div>
+
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        {/* Main Customer Story (Top Left) */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                            className="md:col-span-8 relative min-h-[400px] rounded-4xl overflow-hidden group bg-zinc-900"
+                        >
+                            <Image
+                                src="/customer_story_1.png"
+                                alt="Customer Story"
+                                fill
+                                className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+                            <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-between">
+                                <span className="text-white/60 text-xs font-medium uppercase tracking-widest">Customer Stories</span>
+                                <div className="max-w-xl space-y-4">
+                                    <h3 className="text-white text-3xl md:text-4xl font-medium leading-tight">
+                                        &quot;Awake&apos;s expertise transformed my vision into success!&quot;
+                                    </h3>
+                                    <div className="space-y-1">
+                                        <p className="text-white font-medium">Ananya Shah</p>
+                                        <p className="text-white/60 text-sm">Founder of Chipsland</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Facts & Numbers (Top Right) */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            className="md:col-span-4 bg-yellow-200 rounded-4xl p-10 flex flex-col justify-between min-h-[300px]"
+                        >
+                            <span className="text-black/40 text-xs font-medium uppercase tracking-widest">Facts & Numbers</span>
+                            <div className="space-y-2">
+                                <div className="text-7xl font-medium text-black tracking-tighter">91%</div>
+                                <p className="text-black/80 font-medium leading-tight">
+                                    Clients recommend our design services.
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        {/* Small Brand Story (Bottom Left) */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50, scale: 0.95 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                            className="md:col-span-4 bg-zinc-900 rounded-4xl p-8 md:p-10 flex flex-col justify-between min-h-[450px]"
+                        >
+                            <div className="space-y-6">
+                                <span className="text-white/40 text-xs font-medium uppercase tracking-widest">Customer Stories</span>
+                                <p className="text-white text-xl md:text-2xl font-medium leading-snug">
+                                    Their creativity and attention to detail transformed our brand completely!
+                                </p>
+                            </div>
+                            <div className="relative w-full aspect-square rounded-2xl overflow-hidden mt-8">
+                                <Image
+                                    src="/brand_showcase.png"
+                                    alt="Brand Success"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </motion.div>
+
+                        {/* Large Quote (Bottom Right) */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="md:col-span-8 bg-zinc-100 dark:bg-zinc-900 rounded-4xl p-10 md:p-16 flex flex-col justify-center min-h-[450px]"
+                        >
+                            <div className="space-y-8">
+                                <span className="text-zinc-400 text-xs font-medium uppercase tracking-widest">Customer Stories</span>
+                                <h3 className="text-zinc-900 dark:text-white text-3xl md:text-5xl font-medium leading-[1.15] tracking-tight">
+                                    &quot;Awake Design Agency brought our ideas to life with exceptional creativity and precision, exceeding expectations.&quot;
+                                </h3>
+                                <div className="space-y-1">
+                                    <p className="text-zinc-900 dark:text-white font-medium">Kabir Shah</p>
+                                    <p className="text-zinc-400 text-sm">Founder of Chipsland</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}

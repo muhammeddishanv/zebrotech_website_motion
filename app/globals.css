@@ -105,3 +105,26 @@
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* ── Logo Carousel ───────────────────────────────────────────────────────── */
+/* Logos: original colors, lightweight */
+.carousel-logo {
+  opacity: 1;
+  filter: none !important;
+  transition: opacity 600ms ease !important;
+}
+
+.carousel-logo:hover {
+  opacity: 0.7;
+}
+
+/* Dark mode: pure white logos */
+html.dark .carousel-logo {
+  opacity: 0.6;
+  filter: invert(1) brightness(2) !important;
+}
+
+html.dark .carousel-logo:hover {
+  opacity: 1;
+  filter: invert(1) brightness(2) !important;
+}
