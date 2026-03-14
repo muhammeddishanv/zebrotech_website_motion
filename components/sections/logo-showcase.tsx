@@ -32,7 +32,7 @@ export function LogoShowcase() {
                 <div className="flex items-center justify-center gap-6 mb-8">
                     <div className="h-[3px] flex-1 max-w-[200px] bg-linear-to-r from-transparent to-zinc-300 dark:to-zinc-500" />
                     <span className="text-[11px] md:text-sm font-medium text-zinc-500 dark:text-zinc-400 text-center whitespace-nowrap tracking-wide">
-                        Loved by 1000+ big and small brands around the worlds
+                        Loved by big and small brands around the world
                     </span>
                     <div className="h-[3px] flex-1 max-w-[200px] bg-linear-to-l from-transparent to-zinc-300 dark:to-zinc-500" />
                 </div>
@@ -43,10 +43,6 @@ export function LogoShowcase() {
                  */}
                 <div
                     className="relative w-full overflow-hidden select-none"
-                    style={{
-                        maskImage: "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-                        WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-                    }}
                 >
                     {/*
                      * Pure CSS @keyframes animation (runs on compositor thread).

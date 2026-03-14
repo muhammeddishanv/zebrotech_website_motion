@@ -8,12 +8,10 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { FAQSection } from "@/components/sections/faq-section"
 import { FooterCTA } from "@/components/sections/footer-cta"
 import { Footer } from "@/components/layout/footer"
-import { PageBackground } from "@/components/layout/page-background"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      <PageBackground />
       <HeroSection />
       <LogoShowcase />
       <ImpactSection />

@@ -12,7 +12,7 @@ const team = [
         image: "/dishan_full stack developer.png",
     },
     {
-        name: "Nishan",
+        name: "Nishal",
         role: "Backend Developer",
         image: "/nishan_backend developer.png",
     },
@@ -20,6 +20,11 @@ const team = [
         name: "Farseen",
         role: "Angular Developer",
         image: "/farseen_angular developer.png",
+    },
+    {
+        name: "Muhsin",
+        role: "UI/UX Designer",
+        image: "/Muhsin_ uiux_designer - Copy new.png",
     }
 ]
 
@@ -41,8 +46,8 @@ export function TeamSection() {
                     </motion.h2>
                 </div>
 
-                <div className="max-w-4xl mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
                         {team.map((member, index) => (
                             <motion.div
                                 key={index}
@@ -61,7 +66,7 @@ export function TeamSection() {
                                         priority
                                     />
                                 </div>
-                                
+
                                 <div className="space-y-1">
                                     <h3 className="text-xl font-medium text-zinc-900 dark:text-white">
                                         {member.name}

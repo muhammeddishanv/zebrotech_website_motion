@@ -9,25 +9,25 @@ const projects = [
     {
         title: "FlowBank",
         image: "/portfolio_mockup_1.png",
-        tags: ["UX Research", "Interface Design"],
+        tags: ["Fintech Engine", "Cloud Infrastructure"],
         color: "bg-emerald-50/50"
     },
     {
         title: "Academy.co",
         image: "/portfolio_mockup_2.png",
-        tags: ["Product Design", "Interaction Design"],
+        tags: ["SAAS Architecture", "Custom CRM"],
         color: "bg-indigo-50/50"
     },
     {
         title: "Lumina Studio",
         image: "/portfolio_mockup_3.png",
-        tags: ["Brand Identity", "Web Design"],
+        tags: ["API Development", "Microservices"],
         color: "bg-rose-50/50"
     },
     {
         title: "Aura Commerce",
         image: "/portfolio_mockup_4.png",
-        tags: ["E-commerce", "Mobile App"],
+        tags: ["Scalable Backend", "Mobile App"],
         color: "bg-amber-50/50"
     }
 ]
@@ -44,8 +44,8 @@ export function PortfolioSection() {
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white max-w-4xl mx-auto leading-[1.1]"
                     >
-                        How we transformed a small<br />
-                        business&apos;s <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">online presence</span>
+                        How we engineered robust<br />
+                        digital <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">architectures</span>
                     </motion.h2>
                 </div>
 
