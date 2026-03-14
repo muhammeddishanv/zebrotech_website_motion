@@ -35,6 +35,8 @@ const team = [
 ]
 
 export function TeamSection() {
+    const [isPaused, setIsPaused] = React.useState(false)
+
     return (
         <section id="team" className="relative py-12 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
@@ -93,8 +95,15 @@ export function TeamSection() {
                             className="flex items-center w-max py-4"
                             style={{
                                 animation: "team-carousel-scroll 10s linear infinite",
+                                animationPlayState: isPaused ? "paused" : "running",
                                 willChange: "transform",
                             }}
+                            onMouseEnter={() => setIsPaused(true)}
+                            onMouseLeave={() => setIsPaused(false)}
+                            onMouseDown={() => setIsPaused(true)}
+                            onMouseUp={() => setIsPaused(false)}
+                            onTouchStart={() => setIsPaused(true)}
+                            onTouchEnd={() => setIsPaused(false)}
                         >
                             {[...team, ...team].map((member, index) => (
                                 <div
