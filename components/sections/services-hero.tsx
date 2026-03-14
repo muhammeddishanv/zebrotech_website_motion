@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { TextEffect } from "@/components/ui/text-effect"
 
 export function ServicesHero() {
     const { scrollY } = useScroll()
@@ -30,11 +31,9 @@ export function ServicesHero() {
 
             <div className="container mx-auto px-3 md:px-6">
                 <div className="max-w-6xl mx-auto text-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-zinc-900 dark:text-white mb-8 leading-[1.1]"
+                    <TextEffect
+                        as="h1"
+                        className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-zinc-900 dark:text-white mb-8 leading-[1.2]"
                     >
                         What we{" "}
                         <span className="whitespace-nowrap italic font-serif font-normal text-zinc-600 dark:text-zinc-300">
@@ -42,7 +41,7 @@ export function ServicesHero() {
                         </span>
                         <br />
                         for your brand
-                    </motion.h1>
+                    </TextEffect>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

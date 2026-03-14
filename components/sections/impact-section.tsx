@@ -3,6 +3,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { Wand2, Zap, Target } from "lucide-react"
+import { TextEffect } from "@/components/ui/text-effect"
 
 interface IImpactSectionProps {
     linkText?: string
@@ -16,7 +17,7 @@ export function ImpactSection({
     children
 }: IImpactSectionProps) {
     return (
-        <section id="about" className="relative py-20 bg-transparent overflow-hidden">
+        <section id="about" className="relative py-6 md:py-20 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -26,7 +27,7 @@ export function ImpactSection({
                     className="text-center"
                 >
                     {/* Heading — constrained wide enough so each chunk stays on ONE line */}
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.2]">
+                    <TextEffect as="h2" className="text-[1.5rem] min-[400px]:text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.2]">
                         Building robust applications
                         <br />
                         <span className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-2">
@@ -35,7 +36,7 @@ export function ImpactSection({
                                 technical expertise
                             </span>
                         </span>
-                    </h2>
+                    </TextEffect>
 
                     {/* Pills */}
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:gap-6">

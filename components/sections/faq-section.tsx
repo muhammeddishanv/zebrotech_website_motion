@@ -4,6 +4,7 @@ import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Plus, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { TextEffect } from "@/components/ui/text-effect"
 
 const faqs = [
     {
@@ -32,20 +33,14 @@ export function FAQSection() {
     const [openIndex, setOpenIndex] = React.useState<number | null>(null)
 
     return (
-        <section id="faq" className="relative py-24 bg-transparent overflow-hidden">
+        <section id="faq" className="relative py-12 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-4xl md:text-5xl lg:text-5xl font-medium tracking-tight text-zinc-900 dark:text-white"
-                    >
+                    <TextEffect as="h2" className="text-4xl md:text-5xl lg:text-5xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.2]">
                         Got questions?
                         <br />
                         We&apos;ve got <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">answers</span>
-                    </motion.h2>
+                    </TextEffect>
                 </div>
 
                 <div className="max-w-4xl mx-auto space-y-4">

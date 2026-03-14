@@ -13,6 +13,7 @@ import {
     Check,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { TextEffect } from "@/components/ui/text-effect"
 
 const services = [
     {
@@ -115,14 +116,11 @@ const cardVariants = {
 
 export function ServicesDetail() {
     return (
-        <section className="py-24 bg-transparent overflow-hidden">
+        <section className="py-12 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-20">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    <TextEffect
+                        as="h2"
                         className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white"
                     >
                         Our full suite of{" "}
@@ -130,7 +128,7 @@ export function ServicesDetail() {
                         <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">
                             capabilities
                         </span>
-                    </motion.h2>
+                    </TextEffect>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

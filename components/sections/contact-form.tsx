@@ -4,6 +4,7 @@ import * as React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, ChevronDown, Loader2, Search } from "lucide-react"
+import { TextEffect } from "@/components/ui/text-effect"
 
 // ── Country data ──────────────────────────────────────────
 interface Country {
@@ -343,7 +344,7 @@ export function ContactForm() {
     }
 
     return (
-        <section className="relative py-24 bg-transparent">
+        <section className="relative py-12 md:py-24 bg-transparent">
             {/* ── Fading Background Gradient ── */}
             <motion.div
                 style={{ opacity }}
@@ -364,15 +365,13 @@ export function ContactForm() {
 
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-5xl md:text-7xl font-medium tracking-tight text-zinc-900 dark:text-white leading-tight"
+                    <TextEffect
+                        as="h1"
+                        className="text-[1.75rem] min-[400px]:text-[2rem] sm:text-5xl md:text-7xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.2] whitespace-nowrap sm:whitespace-normal"
                     >
                         Love to hear from you,<br />
-                        Get in <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">touch</span>
-                    </motion.h1>
+                        Get in <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300 whitespace-nowrap sm:whitespace-normal">touch</span>
+                    </TextEffect>
                 </div>
 
                 <motion.div

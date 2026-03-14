@@ -4,10 +4,11 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import { TextEffect } from "@/components/ui/text-effect"
 
 export function FooterCTA() {
     return (
-        <section className="relative py-12 bg-transparent overflow-hidden">
+        <section className="relative py-6 md:py-12 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -18,15 +19,10 @@ export function FooterCTA() {
                 >
 
                     <div className="relative z-10 max-w-4xl mx-auto space-y-5">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-4xl md:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white leading-tight"
-                        >
-                            Innovative solutions for <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">complex systems</span>
-                        </motion.h2>
+                        <TextEffect as="h2" className="text-[1.5rem] min-[400px]:text-[1.75rem] sm:text-4xl md:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.2]">
+                            Innovative solutions for<br />
+                            <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">complex systems</span>
+                        </TextEffect>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}

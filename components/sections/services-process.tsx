@@ -4,6 +4,7 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { Search, Compass, Sparkles, Rocket } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { TextEffect } from "@/components/ui/text-effect"
 
 const steps = [
     {
@@ -42,7 +43,7 @@ const steps = [
 
 export function ServicesProcess() {
     return (
-        <section className="py-24 relative overflow-hidden bg-white dark:bg-zinc-950">
+        <section className="py-12 md:py-24 relative overflow-hidden bg-white dark:bg-zinc-950">
             {/* Background Decorations */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-30 dark:opacity-20 transition-opacity duration-1000">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-400/20 blur-[120px] animate-pulse" />
@@ -67,18 +68,15 @@ export function ServicesProcess() {
                             <div className="h-px w-8 bg-zinc-300 dark:bg-zinc-700" />
                         </motion.div>
                         
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        <TextEffect
+                            as="h2"
                             className="text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.05] mb-8"
                         >
                             How we{" "}
                             <span className="italic font-serif font-normal text-zinc-400 dark:text-zinc-500">
                                 work
                             </span>
-                        </motion.h2>
+                        </TextEffect>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}

@@ -38,7 +38,7 @@ export function PhilosophySection() {
     }, []);
 
     return (
-        <section className="py-24 bg-transparent overflow-hidden">
+        <section className="py-6 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="relative h-auto md:h-[600px] flex flex-col md:block items-center justify-center max-w-5xl mx-auto gap-8 md:gap-0">
                     {philosophyItems.map((item, index) => {

@@ -4,6 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { TextEffect } from "@/components/ui/text-effect"
 
 const projects = [
     {
@@ -34,19 +35,13 @@ const projects = [
 
 export function PortfolioSection() {
     return (
-        <section id="portfolio" className="relative py-24 bg-transparent overflow-hidden">
+        <section id="portfolio" className="relative py-12 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white max-w-4xl mx-auto leading-[1.1]"
-                    >
+                    <TextEffect as="h2" className="text-[1.4rem] min-[400px]:text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white max-w-4xl mx-auto leading-[1.2] whitespace-nowrap sm:whitespace-normal">
                         How we engineered robust<br />
                         digital <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">architectures</span>
-                    </motion.h2>
+                    </TextEffect>
                 </div>
 
                 <div className="max-w-7xl mx-auto">

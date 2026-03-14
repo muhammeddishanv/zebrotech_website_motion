@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { TextEffect } from "@/components/ui/text-effect"
 
 export function AboutHero() {
     const { scrollY } = useScroll()
     const opacity = useTransform(scrollY, [0, 500], [1, 0])
 
     return (
-        <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-transparent">
+        <section className="relative min-h-auto md:min-h-[90vh] flex items-center pt-[120px] pb-8 md:pt-20 overflow-hidden bg-transparent">
             {/* ── Fading Background Gradient ── */}
             <motion.div
                 style={{ opacity }}
@@ -30,19 +31,17 @@ export function AboutHero() {
 
             <div className="container mx-auto px-3 md:px-6">
                 <div className="max-w-6xl mx-auto text-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-zinc-900 dark:text-white mb-8 leading-[1.1]"
+                    <TextEffect
+                        as="h1"
+                        className="text-[1.25rem] min-[375px]:text-[1.4rem] min-[400px]:text-[1.5rem] sm:text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-zinc-900 dark:text-white mb-8 leading-[1.2] whitespace-nowrap sm:whitespace-normal"
                     >
                         Empowering innovation through
                         <br />
-                        <span className="italic font-serif font-normal text-zinc-600 dark:text-zinc-300">
+                        <span className="italic font-serif font-normal text-zinc-600 dark:text-zinc-300 whitespace-nowrap sm:whitespace-normal">
                             powerful
                         </span>{" "}
                         software solutions
-                    </motion.h1>
+                    </TextEffect>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

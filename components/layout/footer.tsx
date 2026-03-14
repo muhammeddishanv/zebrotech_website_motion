@@ -106,6 +106,7 @@ export function Footer() {
                         <h4 className="text-zinc-900 dark:text-white font-bold text-sm uppercase tracking-wider mb-8">Contact Us</h4>
                         <div className="space-y-6">
                             <div className="flex items-center gap-3">
+                                <Mail className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0" />
                                 <a
                                     href={`mailto:${footerLinks.contact.email}`}
                                     className="text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium break-all"
@@ -114,6 +115,7 @@ export function Footer() {
                                 </a>
                             </div>
                             <div className="flex items-start gap-3">
+                                <Phone className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0 mt-1" />
                                 <div className="space-y-2">
                                     {footerLinks.contact.phones.map((phone) => (
                                         <a
@@ -127,6 +129,7 @@ export function Footer() {
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
+                                <MapPin className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0 mt-1" />
                                 <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed font-medium">
                                     {footerLinks.contact.address}
                                 </p>

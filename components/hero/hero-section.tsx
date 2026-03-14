@@ -4,13 +4,14 @@ import * as React from "react"
 import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import { TextEffect } from "@/components/ui/text-effect"
 
 export function HeroSection() {
     const { scrollY } = useScroll()
     const opacity = useTransform(scrollY, [0, 500], [1, 0])
 
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
+        <section className="relative min-h-auto md:min-h-screen flex items-center overflow-hidden bg-transparent">
             {/* ── Fading Background Gradient ── */}
             <motion.div
                 style={{ opacity }}
@@ -31,21 +32,19 @@ export function HeroSection() {
             </motion.div>
 
             {/* ── Content ── */}
-            <div className="container mx-auto px-6 text-center max-w-5xl pt-32 pb-20 md:pt-40 md:pb-32">
+            <div className="container mx-auto px-6 text-center max-w-5xl pt-[120px] pb-8 md:pt-40 md:pb-32">
 
                 {/* Heading */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-zinc-900 dark:text-white mb-8 leading-[1.1]"
+                <TextEffect
+                    as="h1"
+                    className="text-[1.4rem] min-[400px]:text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-zinc-900 dark:text-white mb-8 leading-[1.2] whitespace-nowrap sm:whitespace-normal"
                 >
                     Engineering custom software
                     <br />
-                    <span className="italic font-serif font-normal text-zinc-600 dark:text-zinc-300">
+                    <span className="italic font-serif font-normal text-zinc-600 dark:text-zinc-300 whitespace-nowrap sm:whitespace-normal">
                         with scalability in mind
                     </span>
-                </motion.h1>
+                </TextEffect>
 
                 {/* Subtitle */}
                 <motion.p

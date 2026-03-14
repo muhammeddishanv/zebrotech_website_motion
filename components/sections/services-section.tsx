@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Code2, Globe, Smartphone, Palette, ArrowUpRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { TextEffect } from "@/components/ui/text-effect"
 
 const services = [
     {
@@ -43,20 +44,14 @@ interface ServicesSectionProps {
 
 export function ServicesSection({ showCTA = true }: ServicesSectionProps) {
     return (
-        <section id="services" className="relative py-24 bg-transparent overflow-hidden">
+        <section id="services" className="relative py-12 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-10">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-4xl md:text-5xl lg:text-5xl font-medium tracking-tight text-zinc-900 dark:text-white"
-                    >
+                    <TextEffect as="h2" className="text-4xl md:text-5xl lg:text-5xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.2] whitespace-nowrap sm:whitespace-normal">
                         Where logic
                         <br />
                         meets <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">scalability</span>
-                    </motion.h2>
+                    </TextEffect>
                 </div>
 
                 <div className="max-w-7xl mx-auto">
@@ -69,14 +64,14 @@ export function ServicesSection({ showCTA = true }: ServicesSectionProps) {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className={cn(
-                                    "flex flex-col items-start p-10 rounded-2xl transition-colors duration-300",
+                                    "flex flex-col items-start p-5 sm:p-8 lg:p-10 rounded-2xl transition-colors duration-300 overflow-hidden w-full",
                                     service.bgColor
                                 )}
                             >
-                                <div className={cn("mb-8", service.iconColor)}>
-                                    <service.icon className="w-9 h-9" strokeWidth={1.5} />
+                                <div className={cn("mb-5 md:mb-8", service.iconColor)}>
+                                    <service.icon className="w-8 h-8 md:w-9 md:h-9" strokeWidth={1.5} />
                                 </div>
-                                <h3 className={cn("text-2xl md:text-3xl font-medium leading-tight whitespace-pre-line tracking-tight", service.textColor)}>
+                                <h3 className={cn("text-lg min-[400px]:text-xl md:text-2xl lg:text-3xl font-medium leading-[1.15] whitespace-pre-line tracking-tight w-full", service.textColor)}>
                                     {service.title}
                                 </h3>
                             </motion.div>

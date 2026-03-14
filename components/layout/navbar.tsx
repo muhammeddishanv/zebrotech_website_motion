@@ -52,19 +52,78 @@ export function Navbar() {
                 "fixed top-0 left-0 right-0 z-100 transition-all duration-300 px-6 py-6"
             )}
         >
-            <nav className="max-w-7xl mx-auto flex items-center justify-between lg:justify-center">
+            <nav className="w-full max-w-7xl mx-auto flex items-center justify-between lg:justify-center">
 
-                {/* Mobile/Tablet Logo (Left) */}
-                <Link href="/" className="lg:hidden flex items-center">
-                    <Image
-                        src="/zybrotech-logo.webp"
-                        alt="Zybrotech Logo"
-                        width={140}
-                        height={38}
-                        className="h-8 w-auto object-contain dark:brightness-0 dark:invert"
-                        priority
-                    />
-                </Link>
+                {/* Mobile/Tablet Unified Navigation Pill */}
+                <div className={cn(
+                    "lg:hidden flex items-center justify-between w-full rounded-full px-5 py-3 transition-all duration-300",
+                    scrolled
+                        ? "bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.3)] border border-zinc-200/50 dark:border-zinc-800/50"
+                        : "bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-sm border border-zinc-200/40 dark:border-zinc-800/40"
+                )}>
+                    {/* Mobile/Tablet Logo (Left) */}
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/zybrotech-logo.webp"
+                            alt="Zybrotech Logo"
+                            width={140}
+                            height={38}
+                            className="h-7 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+                            priority
+                        />
+                    </Link>
+
+                    {/* Right side Actions (Mobile only) */}
+                    <div className="flex items-center gap-2.5">
+                        {/* Theme Toggle - Mobile */}
+                        {mounted && (
+                            <button
+                                onClick={() => setTheme(isDark ? "light" : "dark")}
+                                className={cn(
+                                    "w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300",
+                                    "bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700",
+                                    "border border-zinc-200 dark:border-zinc-700"
+                                )}
+                                aria-label="Toggle theme"
+                            >
+                                <AnimatePresence mode="wait" initial={false}>
+                                    {isDark ? (
+                                        <motion.div
+                                            key="sun-mobile"
+                                            initial={{ rotate: -90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: 90, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <Sun className="w-4 h-4 text-zinc-200" />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="moon-mobile"
+                                            initial={{ rotate: 90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: -90, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <Moon className="w-4 h-4 text-zinc-700" />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </button>
+                        )}
+
+                        {/* Mobile Menu Toggle */}
+                        <button
+                            className="w-10 h-10 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700"
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            {isOpen
+                                ? <X className="w-5 h-5 text-zinc-700 dark:text-zinc-200" />
+                                : <Menu className="w-5 h-5 text-zinc-700 dark:text-zinc-200" />
+                            }
+                        </button>
+                    </div>
+                </div>
 
                 {/* Desktop Unified Navigation Pill */}
                 <div className={cn(
@@ -160,57 +219,6 @@ export function Navbar() {
                     </div>
                 </div>
 
-                {/* Right side Actions (Mobile only) */}
-                <div className="flex lg:hidden items-center gap-2">
-
-                    {/* Theme Toggle - Mobile */}
-                    {mounted && (
-                        <button
-                            onClick={() => setTheme(isDark ? "light" : "dark")}
-                            className={cn(
-                                "w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300",
-                                "bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700",
-                                "border border-zinc-200 dark:border-zinc-700"
-                            )}
-                            aria-label="Toggle theme"
-                        >
-                            <AnimatePresence mode="wait" initial={false}>
-                                {isDark ? (
-                                    <motion.div
-                                        key="sun-mobile"
-                                        initial={{ rotate: -90, opacity: 0 }}
-                                        animate={{ rotate: 0, opacity: 1 }}
-                                        exit={{ rotate: 90, opacity: 0 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <Sun className="w-4 h-4 text-zinc-200" />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        key="moon-mobile"
-                                        initial={{ rotate: 90, opacity: 0 }}
-                                        animate={{ rotate: 0, opacity: 1 }}
-                                        exit={{ rotate: -90, opacity: 0 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <Moon className="w-4 h-4 text-zinc-700" />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </button>
-                    )}
-
-                    {/* Mobile Menu Toggle */}
-                    <button
-                        className="lg:hidden w-9 h-9 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700"
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        {isOpen
-                            ? <X className="w-4 h-4 text-zinc-700 dark:text-zinc-200" />
-                            : <Menu className="w-4 h-4 text-zinc-700 dark:text-zinc-200" />
-                        }
-                    </button>
-                </div>
             </nav>
 
             {/* Mobile Menu */}
