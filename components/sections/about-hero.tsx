@@ -26,7 +26,7 @@ export function AboutHero() {
                     }}
                 />
                 {/* Bottom blend layer */}
-                <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-white dark:from-zinc-950 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-linear-to-t from-white dark:from-zinc-950 to-transparent" />
             </motion.div>
 
             <div className="container mx-auto px-3 md:px-6">

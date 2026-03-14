@@ -118,23 +118,32 @@ export function ServicesDetail() {
     return (
         <section className="py-12 md:py-24 bg-transparent overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                    >
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">
+                            Our Capabilities
+                        </span>
+                    </motion.div>
+                    
                     <TextEffect
                         as="h2"
-                        className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white"
+                        className="text-[1.4rem] min-[375px]:text-[1.55rem] min-[400px]:text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.2] whitespace-nowrap sm:whitespace-normal mb-6"
                     >
-                        Our full suite of{" "}
-                        <br />
-                        <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300">
-                            capabilities
-                        </span>
+                        Our full suite of <span className="italic font-serif font-normal text-zinc-700/80 dark:text-zinc-300 whitespace-nowrap sm:whitespace-normal">capabilities</span>
                     </TextEffect>
+                    
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                        className="mt-6 text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto"
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="text-base md:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto"
                     >
                         Every service is crafted with care, backed by strategy, and designed to deliver real results.
                     </motion.p>

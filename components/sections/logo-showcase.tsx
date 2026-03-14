@@ -29,7 +29,7 @@ export function LogoShowcase() {
             <div className="container mx-auto px-6">
 
                 {/* Divider header */}
-                <div className="flex items-center justify-center gap-6 mb-8">
+                <div className="flex items-center justify-center gap-6 mb-2">
                     <div className="h-[3px] flex-1 max-w-[200px] bg-linear-to-r from-transparent to-zinc-300 dark:to-zinc-500" />
                     <span className="text-[11px] md:text-sm font-medium text-zinc-500 dark:text-zinc-400 text-center whitespace-nowrap tracking-wide">
                         Loved by big and small brands around the world
@@ -71,7 +71,7 @@ export function LogoShowcase() {
                                     height={68}
                                     className="carousel-logo"
                                     style={{
-                                        height: "clamp(3rem, 5vw, 4.5rem)",
+                                        height: "clamp(4rem, 8vw, 4.5rem)",
                                         width: "auto",
                                         objectFit: "contain",
                                     }}

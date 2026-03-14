@@ -19,7 +19,7 @@ export function HeroSection() {
             >
                 <div className="absolute inset-0 bg-white dark:bg-zinc-950" />
                 <div 
-                    className="absolute inset-0 opacity-80 dark:opacity-40"
+                    className="absolute inset-0 opacity-80 sm:opacity-80 dark:opacity-40"
                     style={{
                         background: `
                             radial-gradient(circle at 15% 25%, rgba(147,197,253,0.4) 0%, transparent 60%),
@@ -27,8 +27,8 @@ export function HeroSection() {
                         `
                     }}
                 />
-                {/* Bottom blend layer */}
-                <div className="absolute bottom-0 left-0 right-0 h-64 bg-linear-to-t from-white dark:from-zinc-950 to-transparent" />
+                {/* Bottom blend layer - deeper on mobile for smoother sync */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 md:h-64 bg-linear-to-t from-white dark:from-zinc-950 to-transparent" />
             </motion.div>
 
             {/* ── Content ── */}

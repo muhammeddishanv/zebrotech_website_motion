@@ -47,7 +47,15 @@ export function TeamSection() {
                 </div>
 
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3">
+                    <style>{`
+                        @keyframes team-carousel-scroll {
+                            from { transform: translate3d(0, 0, 0); }
+                            to { transform: translate3d(-50%, 0, 0); }
+                        }
+                    `}</style>
+
+                    {/* Desktop View: Grid */}
+                    <div className="hidden sm:grid grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3">
                         {team.map((member, index) => (
                             <motion.div
                                 key={index}
@@ -77,6 +85,43 @@ export function TeamSection() {
                                 </div>
                             </motion.div>
                         ))}
+                    </div>
+
+                    {/* Mobile View: Carousel */}
+                    <div className="sm:hidden relative w-full overflow-hidden mask-[linear-to-r(from-transparent,black_10%,black_90%,transparent)]">
+                        <div
+                            className="flex items-center w-max py-4"
+                            style={{
+                                animation: "team-carousel-scroll 10s linear infinite",
+                                willChange: "transform",
+                            }}
+                        >
+                            {[...team, ...team].map((member, index) => (
+                                <div
+                                    key={index}
+                                    className="w-[280px] shrink-0 flex flex-col items-center text-center px-4"
+                                >
+                                    <div className="relative w-full h-80 mb-6">
+                                        <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            fill
+                                            className="object-contain object-top"
+                                            priority={index < team.length}
+                                        />
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <h3 className="text-xl font-medium text-zinc-900 dark:text-white">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-zinc-500 dark:text-zinc-400 text-sm">
+                                            {member.role}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
