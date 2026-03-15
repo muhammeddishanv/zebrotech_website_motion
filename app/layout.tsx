@@ -9,8 +9,11 @@ import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Awake - Premium Agency',
+  title: 'Zybrotech',
   description: 'Building bold brands with thoughtful design',
+  icons: {
+    icon: '/logo.webp',
+  },
 }
 
 export default function RootLayout({
