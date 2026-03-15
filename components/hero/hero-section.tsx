@@ -32,7 +32,7 @@ export function HeroSection() {
             </motion.div>
 
             {/* ── Content ── */}
-            <div className="container mx-auto px-6 text-center max-w-5xl pt-[120px] pb-8 md:pt-40 md:pb-32">
+            <div className="container mx-auto px-6 text-center max-w-5xl pt-[160px] pb-12 md:pt-40 md:pb-32">
 
                 {/* Heading */}
                 <TextEffect
