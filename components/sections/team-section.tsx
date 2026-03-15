@@ -108,9 +108,9 @@ export function TeamSection() {
                             {[...team, ...team].map((member, index) => (
                                 <div
                                     key={index}
-                                    className="w-[280px] shrink-0 flex flex-col items-center text-center px-4"
+                                    className="w-[240px] shrink-0 flex flex-col items-center text-center px-4"
                                 >
-                                    <div className="relative w-full h-80 mb-6">
+                                    <div className="relative w-full h-72 mb-6">
                                         <Image
                                             src={member.image}
                                             alt={member.name}
