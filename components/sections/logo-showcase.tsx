@@ -17,7 +17,7 @@ const logos = Array.from({ length: LOGO_COUNT }, (_, i) => ({
 // ── Component ─────────────────────────────────────────────────────────────────
 export function LogoShowcase() {
     return (
-        <section className="relative pt-12 pb-8 md:py-20 overflow-hidden">
+        <section className="relative pt-20 pb-10 md:py-20 overflow-hidden">
             {/* Inject keyframes directly — immune to Tailwind purging */}
             <style>{`
                 @keyframes carousel-scroll {
