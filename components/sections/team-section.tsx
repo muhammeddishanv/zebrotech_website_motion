@@ -10,7 +10,7 @@ const team = [
     {
         name: "Dishan",
         role: "Full Stack Developer",
-        image: "/dishan_full stack developer.png",
+        image: "/dishan_full stack developer new.png",
     },
     {
         name: "Nishal",

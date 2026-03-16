@@ -4,6 +4,7 @@ import * as React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, ChevronDown, Loader2, Search } from "lucide-react"
+import { useSearchParams } from "next/navigation"
 import { TextEffect } from "@/components/ui/text-effect"
 
 // ── Country data ──────────────────────────────────────────
@@ -274,6 +275,7 @@ export function ContactForm() {
     const [interestOpen, setInterestOpen] = useState(false)
     const interestRef = useRef<HTMLDivElement>(null)
 
+    const searchParams = useSearchParams()
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -282,6 +284,19 @@ export function ContactForm() {
         message: ""
     })
 
+    useEffect(() => {
+        const interestParam = searchParams.get('interest')
+        const projectParam = searchParams.get('project')
+
+        if (interestParam || projectParam) {
+            setFormData(prev => ({
+                ...prev,
+                interest: interestParam || prev.interest,
+                message: projectParam ? `${projectParam} Demo` : prev.message
+            }))
+        }
+    }, [searchParams])
+
     const isIndia = customDial === "+91"
     const currencySymbol = isIndia ? "₹" : "$"
 
@@ -289,7 +304,8 @@ export function ContactForm() {
         "Web Development",
         "Mobile Apps",
         "Custom Software",
-        "Product Designing"
+        "Product Designing",
+        "Product Demo"
     ]
 
     // Close interest dropdown on click outside

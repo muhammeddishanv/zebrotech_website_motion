@@ -1,8 +1,11 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { ArrowUpRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { TextEffect } from "@/components/ui/text-effect"
 
@@ -53,10 +56,10 @@ export function PortfolioSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                                className="group cursor-pointer"
+                                className="group cursor-pointer border border-zinc-200 dark:border-zinc-800 rounded-[2.5rem] p-4 sm:p-8 transition-colors duration-300 hover:border-zinc-300 dark:hover:border-zinc-700"
                             >
                                 <div className={cn(
-                                    "relative aspect-video rounded-3xl overflow-hidden mb-8 transition-transform duration-500 group-hover:scale-[1.02]",
+                                    "relative aspect-video rounded-2xl overflow-hidden mb-8 transition-transform duration-500 group-hover:scale-[1.01]",
                                     project.color
                                 )}>
                                     <Image
@@ -68,20 +71,27 @@ export function PortfolioSection() {
                                     {/* Subtle overlay on hover */}
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
                                 </div>
-                                <div className="space-y-4">
-                                    <h3 className="text-2xl md:text-3xl font-medium text-zinc-900 dark:text-white">
-                                        {project.title}
-                                    </h3>
-                                    <div className="flex flex-wrap gap-3">
-                                        {project.tags.map((tag) => (
-                                            <span 
-                                                key={tag}
-                                                className="px-5 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 transition-colors"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
+                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
+                                    <div className="space-y-4">
+                                        <h3 className="text-2xl md:text-3xl font-medium text-zinc-900 dark:text-white">
+                                            {project.title}
+                                        </h3>
+                                        <div className="flex flex-wrap gap-3">
+                                            {project.tags.map((tag) => (
+                                                <span 
+                                                    key={tag}
+                                                    className="px-5 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 transition-colors"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
+                                    <Link href={`/contact?interest=Product Demo&project=${project.title}`} className="w-full sm:w-auto mt-2 sm:mt-0">
+                                        <Button className="w-full sm:w-auto bg-black dark:bg-zinc-100 text-white dark:text-black rounded-full px-8 py-3 h-auto text-sm font-medium transition-all hover:scale-105 active:scale-95">
+                                            View Demo
+                                        </Button>
+                                    </Link>
                                 </div>
                             </motion.div>
                         ))}
