@@ -11,28 +11,58 @@ import { TextEffect } from "@/components/ui/text-effect"
 
 const projects = [
     {
-        title: "FlowBank",
+        title: "Restaurant Management",
+        image: "/restaurant_management.png",
+        tags: ["POS integration", "Table management"],
+        color: "bg-orange-50/50"
+    },
+    {
+        title: "Turf booking system",
+        image: "/turf_booking.png",
+        tags: ["Online Booking", "Turf management"],
+        color: "bg-green-50/50"
+    },
+    {
+        title: "Dental Clinic Software",
+        image: "/dental_clinic.png",
+        tags: ["Appointment scheduling", "Patient records"],
+        color: "bg-blue-50/50"
+    },
+    {
+        title: "Dental Lab Software",
+        image: "/dental_lab.png",
+        tags: ["Case tracking", "Lab work orders"],
+        color: "bg-cyan-50/50"
+    },
+    {
+        title: "Wholesale Distribution",
         image: "/portfolio_mockup_1.png",
-        tags: ["Fintech Engine", "Cloud Infrastructure"],
-        color: "bg-emerald-50/50"
+        tags: ["Inventory management", "Order processing"],
+        color: "bg-slate-50/50"
     },
     {
-        title: "Academy.co",
+        title: "Construction Management",
         image: "/portfolio_mockup_2.png",
-        tags: ["SAAS Architecture", "Custom CRM"],
-        color: "bg-indigo-50/50"
+        tags: ["Project costing", "Resource allocation"],
+        color: "bg-yellow-50/50"
     },
     {
-        title: "Lumina Studio",
-        image: "/portfolio_mockup_3.png",
-        tags: ["API Development", "Microservices"],
-        color: "bg-rose-50/50"
+        title: "Education Management System",
+        image: "/software_story_1.png",
+        tags: ["Student Info System (SIS)", "Automated Grading"],
+        color: "bg-purple-50/50"
     },
     {
-        title: "Aura Commerce",
+        title: "Ecommerce Clothing Store",
+        image: "/portfolio_mockup_1.png",
+        tags: ["E-commerce", "Fashion UI"],
+        color: "bg-stone-50/50"
+    },
+    {
+        title: "Ecommerce Jewelry Store",
         image: "/portfolio_mockup_4.png",
-        tags: ["Scalable Backend", "Mobile App"],
-        color: "bg-amber-50/50"
+        tags: ["Luxury Retail", "Jewelry UI"],
+        color: "bg-yellow-50/50"
     }
 ]
 
