@@ -1,5 +1,5 @@
 import { HeroSection } from "@/components/hero/hero-section"
-import { LogoShowcase } from "@/components/sections/logo-showcase"
+// import { LogoShowcase } from "@/components/sections/logo-showcase"
 import { ImpactSection } from "@/components/sections/impact-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { PortfolioSection } from "@/components/sections/portfolio-section"
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <HeroSection />
-      <LogoShowcase />
+      {/* <LogoShowcase /> */}
       <ImpactSection />
       <ServicesSection />
       <PortfolioSection />
