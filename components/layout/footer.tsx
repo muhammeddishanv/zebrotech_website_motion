@@ -19,7 +19,7 @@ const footerLinks = {
         { name: "Privacy Policy", href: "/privacy" },
     ],
     contact: {
-        address: "Padipura Trade Centre,Bypass Jn,Calicut Road, Perinthalmana, 679322",
+        address: "Padipura Trade Centre,Bypass Jn,Calicut Road,679322",
         email: "info@zybrotech.in",
         phones: ["+91 9497 8395 94", "+91 9745 0013 66"]
     }
