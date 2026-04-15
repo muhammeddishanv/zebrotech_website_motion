@@ -1,7 +1,7 @@
 import { AboutHero } from "@/components/sections/about-hero"
 import { PhilosophySection } from "@/components/sections/philosophy-section"
 import { ImpactSection } from "@/components/sections/impact-section"
-import { TeamSection } from "@/components/sections/team-section"
+// import { TeamSection } from "@/components/sections/team-section"
 import { FooterCTA } from "@/components/sections/footer-cta"
 import { Footer } from "@/components/layout/footer"
 import { Metadata } from "next"
@@ -22,7 +22,7 @@ export default function AboutPage() {
                     We believe that every interaction is an opportunity to create something extraordinary.
                 </p>
             </ImpactSection>
-            <TeamSection />
+            {/* <TeamSection /> */}
             <FooterCTA />
             <Footer />
         </main>

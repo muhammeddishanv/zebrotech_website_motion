@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero/hero-section"
 import { ImpactSection } from "@/components/sections/impact-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { PortfolioSection } from "@/components/sections/portfolio-section"
-import { TeamSection } from "@/components/sections/team-section"
+// import { TeamSection } from "@/components/sections/team-section"
 // import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { FAQSection } from "@/components/sections/faq-section"
 import { FooterCTA } from "@/components/sections/footer-cta"
@@ -17,7 +17,7 @@ export default function Home() {
       <ImpactSection />
       <ServicesSection />
       <PortfolioSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       {/* <TestimonialsSection /> */}
       <FAQSection />
       <FooterCTA />
